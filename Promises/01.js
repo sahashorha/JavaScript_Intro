@@ -43,4 +43,62 @@ const PromiseFour = new Promise(function(resolve, reject){
       }, 2000)
 }).then((user) => {
       console.log(user.username);
-}).catch()
+}).catch(function (error){
+      console.log(error);      
+})
+.finally(function(){
+      console.log("Promise resolved and rejected either");
+      
+})
+
+const promiseFive = new Promise(function(resolve, reject){
+      setTimeout(function(){
+            let error = true
+            if(!error){
+                  resolve({username:"javascript",password:"123"})
+            }
+            else{
+                  reject('ERROR: JS went Wrong');
+            }
+      },1000)
+})
+
+async function consumePromiseFive(){
+      try {
+            const respone = await promiseFive
+            console.log(respone);      
+      } catch (error) {
+            console.log(error);
+      }
+}
+
+async function getAllusers(){
+      try {
+       const response =await fetch('')
+       const data = await response.json()
+       console.log(data);     
+      } catch (error) {
+            console.log("Error: ", error)
+      }
+}
+// getAllusers();
+
+fetch('')
+.then((respone) =>{
+      return respone.json();
+})
+.then((data) =>{
+      console.log(data);
+})
+.catch((error) =>  {console.log(error)})
+
+
+async function getAllusers(){
+      try {
+       const response =await fetch('')
+       const data = await response.json()
+       console.log(data);     
+      } catch (error) {
+            console.log("Error: ", error)
+      }
+}

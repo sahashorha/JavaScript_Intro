@@ -20,6 +20,21 @@
                   }
             }
       xhr.send();
+
+      fetch('https://api.github.com/users/sahashorha')
+      .then(response => response.json())
+      // .then(function(data){
+      //       console.log(data)
+      //       return data
+      // })
+      .then(data => console.log(data))
+      .then(function(data){
+            console.log(data.followers);
+      })
+      .catch((error) =>{
+            console.log(error)
+      })
+
       </script>
 </body>
 </html>
