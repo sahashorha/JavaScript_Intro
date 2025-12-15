@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width= , initial-scale=1.0">
+      <title>Rahul Poddar</title>
+</head>
+<body>
+      <h1>Rahul Poddar</h1>
+      <button id="stop">Stop</button>
+</body>
+<script>
+      const sayrahul = function(){
+            console.log("Rahul");
+            
+      }
+      const giveName = setTimeout(sayrahul,3000)
+
+      const ChangeText =    function(){
+            document.querySelector('h1').innerHTML = "You will succed in Life";
+      }
+
+      const TextChange =     setTimeout(ChangeText,3000)
+
+      // const ClearConsole =
+      const clearText = function() {
+            clearInterval(giveName);
+      }
+      const NotChangeText = function(){
+            clearInterval()
+      }
+       function StopButon(){
+            document.getElementById('stop').onclick = clearText;
+      }  
+      StopButon();
+     
+</script>
+</html>

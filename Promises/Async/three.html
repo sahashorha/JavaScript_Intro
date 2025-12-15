@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rahul Poddar</title>
+</head>
+<body>
+  <h1>Rahul Poddar</h1>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>      
+</body>
+<script>
+    // declare intervalId so that i want to stop the interval by doing this    
+      let intervalId;
+      const sayDate = function(str){
+            console.log(str, Date.now());
+      }
+      const startInterval= function() {
+             intervalId= setInterval(sayDate, 1000, "Rahul Poddar");
+      }
+      document.getElementById('start').onclick = startInterval;
+      document.getElementById('stop').onclick = function(){
+            clearInterval(intervalId);
+      }
+      
+</script>
+</html>
